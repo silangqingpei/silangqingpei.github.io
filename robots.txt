@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://silang.xin/sitemap.xml
