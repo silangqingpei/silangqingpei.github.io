@@ -190,7 +190,9 @@ button{font-family:inherit;cursor:pointer}
 .video-note{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:34px;color:#B49C82;font-size:13.5px;letter-spacing:.04em}
 /* ---------- 时间轴 ---------- */
 .tl{display:grid;grid-template-columns:104px 40px 1fr;gap:0;margin-top:10px}
-.tl-photo{margin:26px auto 6px;max-width:560px;text-align:center}
+.tl-photo{margin:26px auto 6px;max-width:920px;text-align:center}
+.tl-photos{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:stretch}
+.tl-photos .tl-figure{flex:1 1 240px;max-width:420px}
 .tl-figure{margin:0;padding:14px;background:#fff;border:1px solid rgba(201,161,92,.35);box-shadow:0 10px 30px rgba(32,20,18,.12);border-radius:8px}
 .tl-figure img{width:100%;max-width:420px;height:auto;display:block;margin:0 auto;filter:sepia(.25) contrast(1.04)}
 .tl-caption{margin-top:10px;font-size:13.5px;color:var(--gold-d);font-family:var(--serif);letter-spacing:.06em}
@@ -767,10 +769,20 @@ button{font-family:inherit;cursor:pointer}
       <p class="sec-sub">一条跨越三百年的传承线：从乾隆御前藏族御医，到藏医世家的当代传人；从雪域高原，到北国冰城与天府之国。</p>
     </div>
     <div class="tl-photo">
-      <figure class="tl-figure">
-        <img src="assets/少年藏服老照片.jpg" alt="藏医世家少年留影" loading="lazy">
-        <figcaption class="tl-caption">藏医世家 · 少年留影（老照片）</figcaption>
-      </figure>
+      <div class="tl-photos">
+        <figure class="tl-figure">
+          <img src="assets/少年藏服老照片.jpg" alt="藏医世家少年留影" loading="lazy">
+          <figcaption class="tl-caption">藏医世家 · 少年留影（老照片）</figcaption>
+        </figure>
+        <figure class="tl-figure">
+          <img src="assets/childhood-group.jpg" alt="童年家庭合影（老照片）" loading="lazy">
+          <figcaption class="tl-caption">童年 · 家族合影（老照片）</figcaption>
+        </figure>
+        <figure class="tl-figure">
+          <img src="assets/childhood-three.jpg" alt="童年三孩童合影（老照片）" loading="lazy">
+          <figcaption class="tl-caption">童年 · 三孩童合影（老照片）</figcaption>
+        </figure>
+      </div>
     </div>
     <div class="tl">
       <div class="tl-row rv">
