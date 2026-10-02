@@ -407,6 +407,29 @@ button{font-family:inherit;cursor:pointer}
 .red-fact b{display:block;font-family:var(--serif);color:#E7CE93;font-size:21px;letter-spacing:.02em}
 .red-fact span{color:#9C8570;font-size:12px;letter-spacing:.05em;display:block;margin-top:6px}
 .red-src{margin-top:26px;padding:14px 18px;border-left:3px solid #8E1F2B;background:rgba(20,12,10,.5);color:#9C8570;font-size:12.5px;line-height:1.85;letter-spacing:.03em}
+/* ---------- 师承教育 ---------- */
+.mentor-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start;margin-top:6px}
+.mentor-photos{display:grid;gap:16px}
+.mentor-photos figure{position:relative;border-radius:14px;overflow:hidden;border:1px solid #EEE2D0;background:#FBF6EC;margin:0}
+.mentor-photos img{width:100%;display:block;transition:transform .4s}
+.mentor-photos figure:hover img{transform:scale(1.03)}
+.mentor-photos figcaption{padding:14px 16px 16px;background:linear-gradient(180deg,rgba(251,246,236,.2),#FBF6EC)}
+.mentor-photos figcaption b{font-family:var(--serif);color:#3D2B1E;font-size:15px;line-height:1.55;display:block;margin:4px 0 3px}
+.mentor-photos figcaption span{color:#8A6A2F;font-size:12px;letter-spacing:.05em;display:block}
+.mentor-copy h3{font-family:var(--serif);color:#3D2B1E;font-size:19px;letter-spacing:.04em;margin:0 0 12px;display:flex;align-items:center;gap:11px}
+.mentor-copy h3::before{content:"";width:22px;height:3px;background:#8E1F2B;border-radius:2px;flex:none}
+.mentor-copy p{color:#7C6753;font-size:14.5px;line-height:1.95;margin-bottom:12px}
+.mentor-copy p b{color:#3D2B1E;font-weight:600}
+.mentor-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 6px}
+.mentor-stat{background:linear-gradient(135deg,#8E1F2B,#A82836);border-radius:14px;padding:20px 14px;text-align:center;color:#fff}
+.mentor-stat b{font-family:var(--serif);font-size:27px;display:block;letter-spacing:.02em}
+.mentor-stat span{font-size:12.5px;letter-spacing:.05em;display:block;margin-top:6px;color:#F6E9DC}
+.mentor-teach{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
+.mentor-teach-item{background:#FBF6EC;border:1px solid #EEE2D0;border-radius:12px;padding:16px 16px}
+.mentor-teach-item b{font-family:var(--serif);color:#8E1F2B;font-size:14px;display:block;margin-bottom:6px}
+.mentor-teach-item p{font-size:13px;color:#7C6753;line-height:1.85;margin:0}
+@media (max-width:900px){.mentor-grid{grid-template-columns:1fr}.mentor-teach{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.mentor-teach{grid-template-columns:1fr}.mentor-stats{grid-template-columns:1fr 1fr 1fr}}
 /* ---------- 学术成就 ---------- */
 .acad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:6px}
 .acad-card{background:#fff;border:1px solid #EEE2D0;border-radius:14px;padding:24px 22px;position:relative;transition:.3s;box-shadow:0 6px 20px rgba(60,32,18,.05)}
@@ -482,6 +505,7 @@ button{font-family:inherit;cursor:pointer}
         <li><a href="#about">院长</a></li>
         <li><a href="#video">视频</a></li>
         <li><a href="#timeline">传承</a></li>
+        <li><a href="#mentor">师承</a></li>
         <li><a href="#red">红色</a></li>
         <li><a href="#therapies">藏医精粹</a></li>
         <li><a href="#academic">学术</a></li>
@@ -846,6 +870,44 @@ button{font-family:inherit;cursor:pointer}
           <div class="red-fact rv"><b>乾隆</b><span>御赐“戴”姓太医</span></div>
         </div>
         <div class="red-src">史料依据：《中国藏学》2016年《藏族群众对红军长征胜利的贡献》、《甘孜州文史资料（第二十二辑）》；上述史实由<strong style="color:#C9B49C">甘孜州党史办提供（2024年11月6日）</strong>，源于《藏医世家 红色传承》官方资料整理。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 师承教育 ===== -->
+<section class="section" id="mentor">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">APPRENTICESHIP · 藏医药薪火相传</span>
+      <h2 class="sec-title">师承教育 · 每年培训十名师承学生</h2>
+      <p class="sec-sub">从“被传承者”到“传承者”——四朗青佩院长将家族三百余年的藏医智慧与国家级非遗南派藏医药，手把手、口传心授地传给年轻一代，让千年藏医药后继有人。</p>
+    </div>
+    <div class="mentor-grid">
+      <div class="mentor-photos">
+        <figure class="rv"><img src="assets/feiyi-cert.jpg" alt="非遗传承人证书：甘孜州南派藏医药代表性传承人">
+          <figcaption><span class="b-tag">2025年7月</span><b>国家级非遗 · 甘孜州南派藏医药代表性传承人</b><span>甘孜藏族自治州文化广播电视和旅游局 认定</span></figcaption>
+        </figure>
+        <figure class="rv"><img src="assets/certs/cert-01.jpg" alt="传承证书：卡洛藏医学术经验继承人">
+          <figcaption><span class="b-tag">2017年12月28日</span><b>传承证书 · 卡洛藏医学术经验继承人</b><span>果洛州喜玛拉雅藏医药研究学会</span></figcaption>
+        </figure>
+      </div>
+      <div class="mentor-copy">
+        <h3>从师承人，到传承人</h3>
+        <p>四朗青佩出身藏医世家，家族传承可溯至清乾隆御前藏族御医。他幼年随父研习家族藏医传承，后于<strong>2017年12月28日拜师藏医专家卡洛教授</strong>，正式成为“卡洛藏医学术经验继承人”，系统研习《四部医典》与南派藏医药精髓；<strong>2025年7月获甘孜藏族自治州文化广播电视和旅游局认定为非物质文化遗产代表性项目“藏医药（甘孜州南派藏医药）”代表性传承人</strong>。</p>
+        <p>身承重托，更肩负薪火相传之责。青佩院长<strong>每年培训10名师承学生</strong>，以传统师承模式带徒授艺——从辨识雪域药材、诵读经典，到临证号脉、炮制藏药，全程口传心授、亲手示范，为藏医药事业培养后继人才。</p>
+        <div class="mentor-stats">
+          <div class="mentor-stat rv"><b>10名</b><span>每年培训师承学生</span></div>
+          <div class="mentor-stat rv"><b>300余年</b><span>藏医世家传承</span></div>
+          <div class="mentor-stat rv"><b>国家级非遗</b><span>南派藏医药传承人</span></div>
+        </div>
+        <h3>师承教学体系</h3>
+        <div class="mentor-teach">
+          <div class="mentor-teach-item rv"><b>经典研读</b><p>诵读《四部医典》等传世经典，研习家族珍藏的三百年藏、汉、蒙文医书与秘方。</p></div>
+          <div class="mentor-teach-item rv"><b>三诊技法</b><p>脉诊、舌诊、尿诊辨证施治，传承“望闻问切”的藏医诊法精髓。</p></div>
+          <div class="mentor-teach-item rv"><b>藏药炮制</b><p>雪域药材辨识、采集与炮制工艺，含珍珠、珊瑚等名贵藏药的配伍制备。</p></div>
+          <div class="mentor-teach-item rv"><b>特色疗法</b><p>藏药浴（五味甘露）、霍尔麦热熨、火灸、放血等藏医外治技法实操带教。</p></div>
+        </div>
       </div>
     </div>
   </div>
