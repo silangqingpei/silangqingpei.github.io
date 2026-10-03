@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="四朗青佩——国家级非遗南派藏医药代表性传承人，哈尔滨德格藏医医院、成都喜马拉雅藏医医院创始人。藏医世家三百余年传承，弘扬藏医药文化，传承非遗技艺，普及藏医养生知识。">
+<title>四朗青佩 · 南派藏医传承人（手机版）</title>
+<style>
+  :root{
+    --gold:#C9A24B; --gold-soft:#E8D5A4; --red:#A4262C; --red-deep:#7A1E24;
+    --blue:#202A44; --cream:#FAF7EF; --ink:#1A1A1A; --grey:#6B6B6B;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden}
+  img{display:block;max-width:100%}
+  a{text-decoration:none;color:inherit}
+  .serif{font-family:"Songti SC","STSong","SimSun",serif}
+
+  /* ===== 顶栏 ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:100;height:52px;background:rgba(26,26,26,.92);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-bottom:1px solid rgba(201,162,75,.35)}
+  .topbar .logo{color:var(--gold-soft);font-size:14px;letter-spacing:1px;font-weight:600}
+  .topbar .logo em{font-style:normal;color:#fff;font-size:12px;opacity:.8}
+  .burger{width:38px;height:38px;display:flex;flex-direction:column;justify-content:center;gap:6px;align-items:center}
+  .burger span{width:20px;height:2px;background:var(--gold-soft);transition:.3s}
+  .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .drawer{position:fixed;inset:0;z-index:99;background:linear-gradient(160deg,#7A1E24 0%,#A4262C 55%,#C9A24B 160%);display:none;flex-direction:column;justify-content:center;padding:60px 30px}
+  .drawer.show{display:flex}
+  .drawer a{color:#fff;font-size:22px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.15);font-family:"Songti SC",serif;letter-spacing:3px}
+  .drawer a small{font-size:12px;opacity:.65;letter-spacing:1px;margin-left:8px;font-family:sans-serif}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;height:100vh;min-height:600px;display:flex;align-items:flex-end;background:#000}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,10,10,.05) 0%,rgba(20,10,10,.25) 40%,rgba(15,5,5,.88) 100%)}
+  .hero .inner{position:relative;z-index:2;padding:0 22px 34px;width:100%}
+  .hero .tib{color:var(--gold-soft);font-size:13px;letter-spacing:4px;margin-bottom:8px;opacity:.9}
+  .hero h1{color:#fff;font-size:36px;line-height:1.3;font-family:"Songti SC",serif;letter-spacing:2px;text-shadow:0 2px 18px rgba(0,0,0,.5)}
+  .hero .sub{margin-top:10px;color:#f5e8c8;font-size:15px;letter-spacing:1px}
+  .hero .badge{display:inline-block;margin-top:14px;background:rgba(201,162,75,.9);color:#3a2408;font-size:12px;padding:6px 14px;border-radius:100px;font-weight:600;letter-spacing:1px}
+  .hero .scroll-hint{position:absolute;bottom:16px;right:22px;color:rgba(255,255,255,.7);font-size:12px;animation:dh 1.6s infinite}
+  @keyframes dh{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ===== 区块通用 ===== */
+  .sec{padding:46px 20px 30px}
+  .kicker{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:700;margin-bottom:6px}
+  .sec h2{font-size:25px;font-family:"Songti SC",serif;letter-spacing:1px;color:#3b2a10;margin-bottom:6px}
+  .sec .lead{font-size:14px;color:var(--grey);margin-bottom:22px}
+  .sec .rule{width:46px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);margin:12px 0 20px;border-radius:2px}
+  .card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 4px 18px rgba(60,30,10,.06);margin-bottom:14px}
+  .card img{border-radius:10px;margin-bottom:12px;width:100%;object-fit:cover}
+  .card h3{font-size:16px;font-family:"Songti SC",serif;color:#3b2a10;margin-bottom:6px}
+  .card p{font-size:13.5px;color:#444}
+
+  /* 数字速览 */
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px 0}
+  .stat{background:linear-gradient(150deg,#7A1E24,#A4262C);border-radius:16px;padding:18px 14px;text-align:center;color:#fff}
+  .stat b{font-size:26px;color:var(--gold-soft);font-family:"Songti SC",serif;display:block}
+  .stat span{font-size:12px;opacity:.9}
+
+  /* 时间线 */
+  .timeline{position:relative;padding-left:26px}
+  .timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--gold),var(--red),transparent)}
+  .tl{position:relative;padding:0 0 22px 18px}
+  .tl::before{content:"";position:absolute;left:-22px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--cream);border:3px solid var(--gold)}
+  .tl b{display:block;font-size:14px;color:#3b2a10;font-family:"Songti SC",serif}
+  .tl p{font-size:13px;color:#555}
+
+  /* 横滑画廊 */
+  .gallery{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 14px;-webkit-overflow-scrolling:touch}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery figure{flex:0 0 78%;scroll-snap-align:center;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 4px 14px rgba(60,30,10,.08)}
+  .gallery figure img{width:100%;height:190px;object-fit:cover}
+  .gallery figure figcaption{padding:10px 12px;font-size:12.5px;color:#555;line-height:1.5}
+
+  /* 徽标网格 */
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:#f3ead2;color:#7a5c1e;font-size:12px;padding:6px 12px;border-radius:100px;border:1px solid #e2d2a4}
+
+  /* 医院卡片 */
+  .hos-card{border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 6px 22px rgba(60,30,10,.08);margin-bottom:18px}
+  .hos-card img{width:100%;height:170px;object-fit:cover}
+  .hos-card .hbody{padding:16px 18px 18px}
+  .hos-card h3{font-size:17px;font-family:"Songti SC",serif;color:#3b2a10;margin-bottom:4px}
+  .hos-card .tag{display:inline-block;background:var(--red);color:#fff;font-size:11px;padding:3px 9px;border-radius:100px;margin:6px 4px 6px 0}
+  .hos-card li{font-size:13px;color:#444;list-style:none;padding:4px 0;border-bottom:1px dashed #eee}
+  .hos-card li:last-child{border:0}
+
+  /* 报道 */
+  .news{background:#fff;border-radius:16px;padding:15px 16px;margin-bottom:12px;box-shadow:0 3px 12px rgba(60,30,10,.05);border-left:3px solid var(--gold)}
+  .news h4{font-size:14.5px;color:#3b2a10;margin-bottom:3px;font-weight:600}
+  .news p{font-size:12.5px;color:#666}
+  .news .src{font-size:11px;color:var(--red);margin-top:6px;display:block}
+
+  /* 底部 */
+  footer{background:linear-gradient(170deg,#202A44,#141a2e);color:#d8d8d8;padding:34px 22px 30px;margin-top:10px}
+  footer h3{color:var(--gold-soft);font-size:16px;font-family:"Songti SC",serif;margin-bottom:12px}
+  footer p{font-size:12.5px;line-height:2;opacity:.9}
+  footer .tel{color:#fff;font-size:17px;letter-spacing:1px;margin:6px 0}
+  footer .copy{margin-top:16px;font-size:11px;color:#9aa;line-height:1.9;border-top:1px solid rgba(255,255,255,.12);padding-top:14px}
+
+  /* 入场动画 */
+  .fade{opacity:0;transform:translateY(18px);transition:.6s ease}
+  .fade.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">四朗青佩 <em>· 南派藏医传承人</em></div>
+  <div class="burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<nav class="drawer" id="drawer">
+  <a href="#dean" onclick="closeMenu()">院长 <small>DEAN</small></a>
+  <a href="#journey" onclick="closeMenu()">传承 <small>HERITAGE</small></a>
+  <a href="#essence" onclick="closeMenu()">藏医精粹 <small>ESSENCE</small></a>
+  <a href="#books" onclick="closeMenu()">专著 <small>BOOKS</small></a>
+  <a href="#kindness" onclick="closeMenu()">仁心 <small>CHARITY</small></a>
+  <a href="#tibetcare" onclick="closeMenu()">藏区医疗 <small>TIBET CARE</small></a>
+  <a href="#honor" onclick="closeMenu()">荣誉 <small>HONOR</small></a>
+  <a href="#media" onclick="closeMenu()">报道 <small>MEDIA</small></a>
+  <a href="#hospitals" onclick="closeMenu()">医院 <small>HOSPITALS</small></a>
+  <a href="#contact" onclick="closeMenu()">联系 <small>CONTACT</small></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img class="bg" src="../assets/hero-bg.jpg" alt="四朗青佩院长">
+  <div class="veil"></div>
+  <div class="inner">
+    <div class="tib">བོད་སྨན་ལས་གཏོད་པ་བསོད་ནམས་ཆོས་འཕེལ།</div>
+    <h1>四朗青佩<br>南派藏医传承人</h1>
+    <div class="sub">藏医世家 · 三百余年传承</div>
+    <div class="badge">国家级非物质文化遗产 · 甘孜州南派藏医药代表性传承人</div>
+  </div>
+  <div class="scroll-hint">↓ 下滑探索</div>
+</section>
+
+<!-- ============ 数字速览 ============ -->
+<section class="sec" style="padding-top:30px">
+  <div class="stats">
+    <div class="stat"><b>30+</b><span>年扎根内地行医</span></div>
+    <div class="stat"><b>100万+</b><span>人次接诊患者</span></div>
+    <div class="stat"><b>2000万+</b><span>元公益捐资捐物</span></div>
+    <div class="stat"><b>300年</b><span>藏医世家传承</span></div>
+  </div>
+</section>
+
+<!-- ============ 院长 ============ -->
+<section class="sec" id="dean">
+  <div class="kicker">ABOUT THE DEAN</div>
+  <h2>从雪域高原走来的<br>南派藏医传承人</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <img src="../assets/portrait-official.jpg" alt="四朗青佩院长">
+    <p>四朗青佩，藏族，1976年出生于四川甘孜炉霍的藏医世家。家族传承可追溯至清朝乾隆时期——先祖阿托为乾隆御前藏族御医，治愈乾隆顽疾获赐"代"姓与黄马褂；母亲系南派藏医发祥地德格土司后人。家中珍藏满、蒙、藏三种语言的医学典籍秘方，代代相传。</p>
+  </div>
+  <div class="card fade">
+    <p>六岁启蒙学医，自幼诵读《四部医典》等传世经典；十六岁正式出诊，先后师从西藏藏医学院首任院长、一代宗师措如·才朗教授，以及藏医全科专家卡洛教授（全国名中医、青海藏医院原院长）、忠登郎加等藏医药名家，系统研习藏医全科与内科，并赴重庆医科大学研学"藏、中、西"三医结合。</p>
+  </div>
+  <div class="card fade">
+    <p>1999年，年仅24岁的他应国家统战部与民宗委支持、经扎日活佛指点，来到北国冰城哈尔滨，创办内地第一家民营藏医院——哈尔滨德格藏医医院，成为将藏医药成规模、成体系推广到内地并取得成功的先行者；2020年又于成都创建成都喜马拉雅藏医医院，形成南北两大中心。</p>
+  </div>
+  <div class="card fade">
+    <p>因号脉精准、医术精湛，他被患者与业内亲切称为"人体CT机"、被患者称作"药师佛"。2025年，他获评国家级非物质文化遗产——藏医药（甘孜州南派藏医药）代表性传承人。</p>
+    <div style="margin-top:12px" class="chips">
+      <span class="chip">全国少数民族医药工作先进个人</span>
+      <span class="chip">黑龙江省第十二届政协委员</span>
+      <span class="chip">世界中联藏医药专委会常务理事</span>
+      <span class="chip">农工党抗疫先进个人</span>
+      <span class="chip">四川省民族卫生健康促进会副会长</span>
+      <span class="chip">中国民族医药学会血液病分会理事</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 传承之路 ============ -->
+<section class="sec" id="journey">
+  <div class="kicker">HERITAGE JOURNEY</div>
+  <h2>传承之路 · 从雪山走向内地</h2>
+  <div class="rule"></div>
+  <p class="lead">一条跨越三百年的传承线：从乾隆御前藏族御医，到藏医世家的当代传人；从雪域高原，到北国冰城与天府之国。</p>
+  <div class="timeline">
+    <div class="tl fade"><b>生于藏医世家</b><p>出生于四川甘孜炉霍藏医世家。家族传承可溯至清乾隆御前藏族御医阿托（获赐"代"姓、黄马褂），舅爷曾任班禅与达赖的保健医生，母亲系德格土司后人。</p></div>
+    <div class="tl fade"><b>启蒙学医</b><p>在父亲要求下研习家族藏医传承，自幼诵读《四部医典》等传世经典，筑牢藏医药根基。</p></div>
+    <div class="tl fade"><b>正式行医</b><p>先后赴德格、拉萨、青海，师从措如·才朗、拉门却吉降措、卡洛等藏医大师深研藏医药，一路学习一路实践。</p></div>
+    <div class="tl fade"><b>深造与临床积淀</b><p>在西藏藏医学院系统研习藏医全科与内科；在四川省人民医院、北京同仁医院临床工作近十年。</p></div>
+    <div class="tl fade"><b>创办内地第一家民营藏医院</b><p>年仅24岁，在哈尔滨创办哈尔滨德格藏医医院，成为将藏医药成规模推广到内地的先行者。</p></div>
+    <div class="tl fade"><b>国难面前，挺身而出</b><p>2003年非典被抽调至小汤山医院执行救治任务；2008年汶川地震率队送去首批救援药品；2010年玉树地震再送救援物资。</p></div>
+    <div class="tl fade"><b>医院发展跃升</b><p>2006年医院正式获批，成为东三省首家、唯一国家二级藏医综合医院；2020年晋级国家二级医院，建筑面积1.2万平方米、开放床位500张。</p></div>
+    <div class="tl fade"><b>应邀出席哈佛大学医学院国际藏医学术研讨会</b><p>作为东北地区藏医学代表、心脑血管医学专家应邀出席，与来自全球80多个国家和地区的顶级专家共研藏医药发展。</p></div>
+    <div class="tl fade"><b>抗疫：藏医药再立新功</b><p>向四川省中医药管理局提交"清肺解瘟"藏药组方并率先应用（甘孜州78例确诊患者中76例使用藏药，参与率97%）；从国外筹募口罩空运回国，累计捐赠约200万元防疫物资。</p></div>
+    <div class="tl fade"><b>成都创办喜马拉雅藏医医院</b><p>在天府之国成都创建成都喜马拉雅藏医医院，形成东北、西南两大中心，构建覆盖全国的藏医药服务网络。</p></div>
+    <div class="tl fade"><b>国家级非遗 · 南派藏医药代表性传承人</b><p>获评国家级非物质文化遗产"藏医药（甘孜州南派藏医药）"州级代表性传承人，投身非遗保护与活态传承。</p></div>
+  </div>
+</section>
+
+<!-- ============ 红色传承 ============ -->
+<section class="sec" style="background:#f6efe0">
+  <div class="kicker">RED LEGACY</div>
+  <h2>红色传承 · 军民鱼水情的家族记忆</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <p>四朗青佩院长家族父系、母系均为藏族地区（嘉绒、康巴）头人，历代思想开明、家风纯良。红军长征过甘孜时期，家族侍奉的扎日活佛率觉日寺僧众倾力支援红军，与刘伯承结下深厚情谊。</p>
+  </div>
+  <div class="card fade">
+    <img src="../assets/mentor-ritual.jpg" alt="扎日活佛故地">
+    <h3>1936 · 红军长征与第四世扎日活佛</h3>
+    <p>1936年红军长征自道孚入炉霍，觉日寺第四世扎日活佛深明大义，拥护欢迎红军，与刘伯承等红军将领建立深厚感情。刘伯承评价："觉日寺及其所辖两个寺院为红军长征的胜利作出了重要贡献。"</p>
+  </div>
+  <div class="chips">
+    <span class="chip">粮食捐给红军</span>
+    <span class="chip">小红军受托照护</span>
+    <span class="chip">藏医世家传承</span>
+    <span class="chip">御赐"代"姓太医</span>
+  </div>
+</section>
+
+<!-- ============ 藏医精粹 ============ -->
+<section class="sec" id="essence">
+  <div class="kicker">TIBETAN MEDICINE ESSENCE</div>
+  <h2>藏医精粹 · 千年智慧的当代传承</h2>
+  <div class="rule"></div>
+  <p class="lead">藏医学是拥有两千三百余年历史的世界四大传统医学之一。以"三因学说"为理论基石，配以天然雪域药材与独特炮制工艺，形成完整诊疗体系。</p>
+
+  <div class="card fade">
+    <img src="../assets/mobile/bath-herbs.jpg" alt="藏医药浴·五味甘露">
+    <h3>世界非遗 · 藏医药浴法"五味甘露"</h3>
+    <p>藏语称"泷沐"，以圆柏叶、黄花杜鹃、水柏枝、高山麻黄、白野蒿等"五味甘露"熬制药液沐浴，通过毛孔渗透调理气血。2018年"藏医药浴法"列入联合国教科文组织人类非物质文化遗产代表作名录，是传统医药中唯二的世界级非遗。</p>
+  </div>
+  <div class="card fade">
+    <img src="../assets/mobile/hotspring-flags.jpg" alt="藏式温泉·经幡">
+    <h3>高原温泉 · 经幡下的传承</h3>
+    <p>藏医药浴的传承与苯教仪轨密切相关，藏地天然温泉至今仍保留着悬挂经幡、依时令沐浴的古老习俗——药浴不仅是疗法，更是藏族传统文化的活态表达。</p>
+  </div>
+  <div class="card fade">
+    <h3>三因学说 · 脉诊</h3>
+    <p>藏医认为健康源于"隆、赤巴、培根"三因的动态平衡，并据此辨证施治。舌诊、脉诊、尿诊是传承数千年的经典诊法，院长因号脉精准被誉为"人体CT机"。</p>
+  </div>
+  <div class="card fade">
+    <h3>雪域藏药 · 珍宝名方</h3>
+    <p>藏药多采自海拔4000米以上雪域高原，纯净高活性。家族珍藏满、蒙、藏三文医典秘方，独有藏药配方400余个；参与国家级课题《伏藏大经典·藏医药部分》整理校对，让失传半个多世纪的名贵藏药"佐塔"重新面世。</p>
+  </div>
+  <div class="card fade">
+    <h3>特色外治 · 内外兼修</h3>
+    <p>白脉涂擦、霍尔麦热熨、金针、火灸、放血等特色外治疗法传承千年；藏香、防瘟药囊等传统防疫智慧在历次疫情中屡建功勋。</p>
+  </div>
+</section>
+
+<!-- ============ 学术成就 ============ -->
+<section class="sec" style="background:#f6efe0">
+  <div class="kicker">ACADEMIC ACHIEVEMENTS</div>
+  <h2>学术成就 · 传承精华守正创新</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <h3>1997 · 国际发声《心血管阻塞及其诊治》</h3>
+    <p>在世界医学杂志发表，将藏医诊疗智慧推向国际学术视野，引起世界医学界广泛关注。</p>
+  </div>
+  <div class="card fade">
+    <h3>2018 · 临床实证《试论藏医三因学说与心隆病治疗的临床医学观察》</h3>
+    <p>选取60例心隆病患者分组对照研究，发表后荣获"年度百佳优秀学术论文"金奖，验证藏医药独特优势。</p>
+  </div>
+  <div class="card fade">
+    <h3>行业论文《藏医药在内地的探索发展之旅》</h3>
+    <p>记录以哈尔滨德格藏医医院为代表的藏医药内地落地实践，探索"传承+创新"发展路径。</p>
+  </div>
+  <div class="card fade">
+    <h3>2024 · 缅怀先师 · 措如·才郎学术思想研讨会</h3>
+    <p>2024年9月7日，纪念著名藏学家、佛学家、藏医药学家措如·才郎大师学术思想研讨会在拉萨隆重召开。成都喜马拉雅藏医医院总院四朗青佩、执行院长文博久道受邀参加，共同追忆这位被誉为"智者大师 民族医圣"的一代宗师为中国藏医药学高等教育事业作出的贡献。</p>
+  </div>
+  <div class="card fade">
+    <h3>国家级课题《伏藏大经典·藏医药部分》与名贵藏药"佐塔"</h3>
+    <p>参与国家级重点科研课题整理校对，带领团队攻克工艺难关，让失传半个多世纪的名贵藏药"佐塔"重新面世。</p>
+  </div>
+</section>
+
+<!-- ============ 专著 ============ -->
+<section class="sec" id="books">
+  <div class="kicker">PERSONAL BOOKS</div>
+  <h2>个人专著 · 跟着藏医学养生</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <img src="../assets/ebook/zhari1.jpg" alt="《跟着藏医学养生》">
+    <h3>《跟着藏医学养生》</h3>
+    <p>四朗青佩 著 · 四川民族出版社 · 2025年12月出版</p>
+    <p style="margin-top:8px">本书摒弃艰深的理论堆砌，直接切入藏医核心"三因"（隆、赤巴、培根）学说，以现代语言清晰阐释人体如何与自然共振、三因如何维系健康天平。</p>
+  </div>
+  <div class="card fade">
+    <h3>藏医曼唐 · 图文并茂</h3>
+    <p>书中精心融入多幅珍贵的藏医曼唐（医学唐卡）细节插图——不仅是艺术品，更是蕴含诊断、治疗智慧的图谱，让读者在欣赏藏族独特美学的同时，直观理解身体与自然的连接。</p>
+  </div>
+  <div class="card fade">
+    <h3>通俗实用 · 贴近生活</h3>
+    <p>从怎么吃、怎么动，到如何调节情绪、安排起居，将藏医理论转化为具体、可执行的日常养生建议，填补藏医养生通俗读物空白。</p>
+  </div>
+  <div class="card fade">
+    <h3>2025-12-11 · 成都 · 新书发布暨签名赠书仪式</h3>
+    <p>青佩院长携新作举办新书发布暨签名赠书仪式，为读者亲笔签名、赠书交流，藏医药养生智慧走进千家万户。</p>
+  </div>
+  <div class="card fade">
+    <h3>学术专著《忠登郎加之藏医诊疗精要》</h3>
+    <p>整理一代藏医名家忠登郎加的诊疗经验，让经典临证智慧有据可查、薪火相传。</p>
+  </div>
+</section>
+
+<!-- ============ 医者仁心 ============ -->
+<section class="sec" id="kindness" style="background:#f6efe0">
+  <div class="kicker">BENEVOLENT HEART</div>
+  <h2>医者仁心 · 视患者为父母</h2>
+  <div class="rule"></div>
+  <p class="lead">"不为良相，便为良医。"二十余年来，青佩院长把工资与心血倾注于公益慈善，被媒体评价为"民族脊梁"式的医者。</p>
+  <div class="card fade">
+    <img src="../assets/img-epidemic.jpg" alt="捐赠抗疫物资">
+    <h3>捐资捐物超2000万元</h3>
+    <p>2003年非典、2008年汶川、2010年玉树、2013年芦山、2020年新冠，历次灾情均率队驰援（据官方资料整理）。</p>
+  </div>
+  <div class="card fade">
+    <img src="../assets/img-donate.jpg" alt="资助大学生">
+    <h3>资助贫困大学生超300万元</h3>
+    <p>每年资助10名大学生，每人每月2000元，从大一资助至毕业。</p>
+  </div>
+  <div class="card fade">
+    <img src="../assets/img-masks.jpg" alt="筹募口罩">
+    <h3>新冠抗疫 · 累计捐赠约200万元</h3>
+    <p>从泰国、法国等筹募10万只口罩空运回国，为武汉、成都、阿坝、炉霍、哈尔滨一线医务筑起防疫墙；向主管部门推荐藏药组方，甘孜州78名确诊患者中76人运用藏药参与救治。</p>
+  </div>
+  <div class="card fade">
+    <img src="../assets/charity/img-aids.jpg" alt="藏区防艾公益">
+    <h3>长年减免医药费 · 情系弱势群体</h3>
+    <p>长年为残疾人士及特困家庭减免医药费，秉持"医佛同源"的慈悲理念，用仁心仁术温暖弱势群体；每年深入藏区义诊约100场，免费治病并送上捐助。</p>
+  </div>
+</section>
+
+<!-- ============ 健康大使 ============ -->
+<section class="sec" id="ambassador">
+  <div class="kicker">PEOPLE'S AMBASSADOR</div>
+  <h2>民族健康大使 · 雪域百姓的深情致意</h2>
+  <div class="rule"></div>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/ambassador/amb-01.jpg" alt="藏区义诊授匾"><figcaption>2020年 · 石渠县瓦须乡卫生院雪域义诊慰问 · 敬献哈达</figcaption></figure>
+    <figure class="fade"><img src="../assets/ambassador/amb-02.jpg" alt="民族健康大使牌匾"><figcaption>群众授匾「民族健康大使」· 千里赴雪域 温暖万家心</figcaption></figure>
+  </div>
+  <div class="card fade">
+    <p>在石渠县瓦须乡卫生院前，藏族群众为青佩院长献上哈达、授予「民族健康大使」荣誉牌匾——"千里赴雪域，温暖万家心"，是藏区老百姓对他多年来免费义诊、免费赠药、帮扶穷苦乡亲最朴素也最真挚的肯定。</p>
+  </div>
+</section>
+
+<!-- ============ 藏区医疗 ============ -->
+<section class="sec" id="tibetcare" style="background:#f6efe0">
+  <div class="kicker">TOGETHER FOR TIBETAN HEALTH</div>
+  <h2>藏区医疗 · 政僧医携手共商发展</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <p>四川省文化厅原副厅长泽波、藏区高僧希阿荣博堪布，多次与青佩院长深入研讨藏区医疗卫生发展，共同推动哈尔滨德格藏医医院、成都喜马拉雅藏医医院反哺雪域、帮扶藏区基层医疗卫生事业——共商藏区特困老百姓看病难、看病不方便问题，两家内地藏院携手支援帮扶藏区医院。</p>
+  </div>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/tibetcare/t1.jpg" alt="深入藏区走访"><figcaption>深入藏区 · 走访交流</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t2.jpg" alt="围桌研讨"><figcaption>围桌研讨 · 共议发展</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t3.jpg" alt="医院走廊交流"><figcaption>实地考察 · 医院走廊交流</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t4.jpg" alt="乡间握手"><figcaption>乡间握手 · 共商帮扶</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t5.jpg" alt="敬献哈达"><figcaption>敬献哈达 · 合作之谊</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t6.jpg" alt="交流研讨"><figcaption>交流研讨 · 共商良策</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t7.jpg" alt="亲切会晤"><figcaption>亲切会晤 · 心系雪域</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t8.jpg" alt="藏中西结合"><figcaption>藏中西结合 · 共探良方</figcaption></figure>
+  </div>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/tibetcare/t9.jpg" alt="冒雨走访"><figcaption>冒雨走访 · 心系雪域</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t10.jpg" alt="围桌共话"><figcaption>围桌共话 · 共商发展</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t11.jpg" alt="走廊交流"><figcaption>走廊交流 · 实地考察</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t12.jpg" alt="乡间握手"><figcaption>乡间握手 · 共话帮扶</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t13.jpg" alt="敬献哈达"><figcaption>敬献哈达 · 情深意长</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t14.jpg" alt="围炉共话"><figcaption>围炉共话 · 共谋医事</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t15.jpg" alt="亲切交谈"><figcaption>亲切交谈 · 共谋良策</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t16.jpg" alt="藏中西结合"><figcaption>藏中西结合 · 交流互鉴</figcaption></figure>
+    <figure class="fade"><img src="../assets/tibetcare/t17.jpg" alt="情系特困"><figcaption>情系特困 · 帮扶就医</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 荣誉墙 ============ -->
+<section class="sec" id="honor">
+  <div class="kicker">HALL OF HONOR</div>
+  <h2>荣誉墙 · 三十载医者荣光</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <h3>2017 · 全国少数民族医药先进个人代表</h3>
+    <p>作为少数民族医药先进个人代表，出席在北京举行的第四次全国少数民族医药会议。</p>
+  </div>
+  <div class="card fade">
+    <h3>2019 · 中国农工民主党优秀党员</h3>
+    <p>长期以委员身份履职建言，获评农工党优秀党员光荣称号。</p>
+  </div>
+  <div class="card fade">
+    <h3>2020 · 农工党全国和黑龙江省疫情防控工作先进个人</h3>
+    <p>新冠疫情中率队筹募十万只口罩空运回国，捐赠物资总价值近百万元。</p>
+  </div>
+  <div class="card fade">
+    <h3>2025 · 甘孜州南派藏医药州级代表性传承人</h3>
+    <p>出身藏医世家，六岁学医、十六岁行医，被认定为国家级非遗甘孜州南派藏医药传承人。</p>
+  </div>
+  <div class="card fade">
+    <h3>黑龙江省政协委员 · 世界中联常务理事</h3>
+    <p>多年担任黑龙江省政协委员，为民族医药发展与民生健康积极建言；活跃于国际传统医学学术舞台，推动藏医药走向世界。</p>
+  </div>
+  <div style="margin-top:6px" class="chips">
+    <span class="chip">主任医师 · 学科带头人</span>
+    <span class="chip">接诊超百万人次</span>
+    <span class="chip">捐资捐物超2000万元</span>
+    <span class="chip">每年藏区义诊约100场</span>
+  </div>
+  <h3 style="margin:26px 0 10px;font-family:'Songti SC',serif;color:#3b2a10">院长证书 · 从医三十载的见证</h3>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/certs/cert-01.jpg" alt="证书"><figcaption>传承证书 · 卡洛藏医学学术经验继承人</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-02.jpg" alt="证书"><figcaption>聘书 · 省民族医药学会肿瘤分会副主任委员</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-04.jpg" alt="证书"><figcaption>常务理事证书 · 健康科普分会</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-05.jpg" alt="证书"><figcaption>聘书 · 血液病分会副会长</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-06.jpg" alt="证书"><figcaption>理事证书 · 血液病分会</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-07.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-08.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-09.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-10.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-11.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-12.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-13.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-14.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-15.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-16.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-17.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-18.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-19.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-20.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+    <figure class="fade"><img src="../assets/certs/cert-21.jpg" alt="证书"><figcaption>荣誉证书</figcaption></figure>
+  </div>
+  <div style="margin-top:8px" class="chips">
+    <span class="chip">锦旗 · 医术高尚 医者仁心（2025）</span>
+    <span class="chip">锦旗 · 仁心仁术（2021）</span>
+    <span class="chip">锦旗 · 悬壶济世（2020）</span>
+  </div>
+</section>
+
+<!-- ============ 媒体报道 ============ -->
+<section class="sec" id="media" style="background:#f6efe0">
+  <div class="kicker">MEDIA COVERAGE</div>
+  <h2>媒体报道 · 权威之声</h2>
+  <div class="rule"></div>
+  <div class="news fade">
+    <h4>中国日报网 · 时政要闻</h4>
+    <p>黑龙江藏医捐赠价值近百万元防控疫情物资——"他，仿佛是为扶危济困而生。"</p>
+    <span class="src">2020-02-27 · 中国日报网</span>
+  </div>
+  <div class="news fade">
+    <h4>中国西藏网 · 藏医药</h4>
+    <p>四朗青佩：以本民族医药救治病患，是我最幸福的事——从祖传医书到抗疫组方，一位藏医的赤子之心。</p>
+    <span class="src">2020-03-18 · 中国西藏网</span>
+  </div>
+  <div class="news fade">
+    <h4>康巴卫视 · 向巴聊天栏目</h4>
+    <p>藏医专家四朗青佩在"向巴聊天"中解析民族医药经典——主持人向巴老师实地采访，畅聊世界非遗藏药浴、亚健康问题与藏医药在内地的传承弘扬。</p>
+    <span class="src">2023-06 · 康巴卫视</span>
+  </div>
+  <div class="news fade">
+    <h4>新华网 · 权威报道</h4>
+    <p>跨越喜马拉雅的战"疫"——藏医药抗疫与铸牢中华民族共同体意识：甘孜州78名确诊病例中76名使用藏药，参与率达97%。</p>
+    <span class="src">2022-01-18 · 新华网</span>
+  </div>
+  <div class="news fade">
+    <h4>抖音百科 · 人物词条</h4>
+    <p>四朗青佩[哈尔滨德格藏医医院创始人、院长]——人物履历、医学贡献、公益捐赠完整收录：每年藏区义诊100场、公益善款500余万元。</p>
+    <span class="src">抖音百科 · 四朗青佩</span>
+  </div>
+  <div class="news fade">
+    <h4>成都喜马拉雅藏医医院 · 学术动态</h4>
+    <p>缅怀先师 · 四朗青佩院长受邀参加"措如·才郎学术思想研讨会"——2024年9月7日于拉萨隆重召开，追忆"智者大师 民族医圣"为中国藏医药学高等教育事业作出的贡献。</p>
+    <span class="src">2024-09 · 成都喜马拉雅藏医医院</span>
+  </div>
+  <div class="news fade">
+    <h4>四川省中医药管理局</h4>
+    <p>成都喜马拉雅藏医医院 · 中医医疗广告审查证明公开文件，法定代表人（主要负责人）：四朗青佩。</p>
+    <span class="src">2023-09 / 2025-10 · 四川省中医药管理局</span>
+  </div>
+  <div class="news fade">
+    <h4>央广网 / 中国工业新闻网</h4>
+    <p>他衣着简朴、生活节俭，一套藏袍可出席多届国内外学术会；却为疫区持续捐赠防控物资近百万元——他就是四朗青佩。悬壶济世 · 同胞之情血浓于水。</p>
+    <span class="src">央广网 / 中国工业新闻网</span>
+  </div>
+  <div class="news fade">
+    <h4>搜狐 · 哈尔滨德格曼孜康</h4>
+    <p>四月，青佩院长回哈出诊——患者听说院长回哈尔滨出诊，每天早早来到医院门口排队；院长日诊数十人为各族患者解除病痛。</p>
+    <span class="src">2023-04-17 · 搜狐</span>
+  </div>
+</section>
+
+<!-- ============ 高僧关怀 ============ -->
+<section class="sec" id="sodargye">
+  <div class="kicker">HIGH MONK CARE</div>
+  <h2>高僧关怀 · 索达吉堪布多次莅临医院</h2>
+  <div class="rule"></div>
+  <p class="lead">大德高僧索达吉堪布多次亲临哈尔滨德格藏医医院，关心藏医医院的发展建设，与青佩院长共议藏医药的传承弘扬与未来发展。</p>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/sodargye/s-01.jpg" alt="莅临医院"><figcaption>莅临医院 · 慈悲关怀</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-02.jpg" alt="关心发展"><figcaption>关心医院发展</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-03.jpg" alt="亲切交流"><figcaption>亲切交流 · 殷殷关切</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-04.jpg" alt="共话传承"><figcaption>共话藏医药传承</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-05.jpg" alt="走访医院"><figcaption>走访医院 · 体察院情</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-06.jpg" alt="慈心关怀"><figcaption>慈心关怀 · 寄望殷切</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-07.jpg" alt="多次莅临"><figcaption>多次莅临 · 情系藏医</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-08.jpg" alt="关心建设"><figcaption>关心建设 · 寄予厚望</figcaption></figure>
+    <figure class="fade"><img src="../assets/sodargye/s-09.jpg" alt="合影留念"><figcaption>合影留念 · 法缘深厚</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 两会议政 ============ -->
+<section class="sec" style="background:#f6efe0">
+  <div class="kicker">POLITICAL DUTY</div>
+  <h2>两会议政 · 为民族医药发声</h2>
+  <div class="rule"></div>
+  <p class="lead">作为黑龙江省政协委员，四朗青佩院长多年来认真履职、积极建言——为民族医药事业发展与百姓健康福祉建言献策。</p>
+  <div class="gallery">
+    <figure class="fade"><img src="../assets/lianghui/lh-01.jpg" alt="会场履职"><figcaption>出席会议 · 会场履职</figcaption></figure>
+    <figure class="fade"><img src="../assets/lianghui/lh-02.jpg" alt="建言献策"><figcaption>认真履职 · 建言献策</figcaption></figure>
+    <figure class="fade"><img src="../assets/lianghui/lh-03.jpg" alt="政协委员"><figcaption>政协委员 · 四朗青佩</figcaption></figure>
+    <figure class="fade"><img src="../assets/lianghui/lh-04.jpg" alt="委员交流"><figcaption>与委员交流 · 共议民生</figcaption></figure>
+    <figure class="fade"><img src="../assets/lianghui/lh-05.jpg" alt="服务民生"><figcaption>履行职责 · 服务民生</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 师承教育 ============ -->
+<section class="sec">
+  <div class="kicker">APPRENTICESHIP</div>
+  <h2>师承教育 · 藏医药薪火相传</h2>
+  <div class="rule"></div>
+  <div class="card fade">
+    <img src="../assets/img-teacher.jpg" alt="师承授徒">
+    <h3>从"被传承者"到"传承者"</h3>
+    <p>青佩院长出身藏医世家，幼年随父研习家族传承，2017年12月28日拜师藏医专家卡洛教授，正式成为"卡洛藏医学术经验继承人"。</p>
+  </div>
+  <div class="card fade">
+    <h3>每年培训十名师承学生</h3>
+    <p>以传统师承模式带徒授艺——从辨识雪域药材、诵读经典，到临证号脉、炮制藏药，全程口传心授、亲手示范，为藏医药事业培养后继人才。</p>
+  </div>
+  <div class="chips">
+    <span class="chip">诵读《四部医典》等传世经典</span>
+    <span class="chip">脉诊·舌诊·尿诊辨证施治</span>
+    <span class="chip">雪域药材辨识与炮制</span>
+    <span class="chip">藏药浴·霍尔麦·放血等外治技法</span>
+  </div>
+</section>
+
+<!-- ============ 医院 ============ -->
+<section class="sec" id="hospitals">
+  <div class="kicker">TWO HOSPITALS</div>
+  <h2>两家医院 · 南北格局</h2>
+  <div class="rule"></div>
+  <p class="lead">从北国冰城到天府之国，两座藏医医院构建起覆盖南北的藏医药服务网络，让千年藏医智慧惠及更多百姓。</p>
+
+  <div class="hos-card fade">
+    <img src="../assets/hospital-harbin-entrance.jpg" alt="哈尔滨德格藏医医院">
+    <div class="hbody">
+      <h3>哈尔滨德格藏医医院</h3>
+      <div><span class="tag">东北首家</span><span class="tag">国家二级藏医综合医院</span><span class="tag">东三省唯一</span></div>
+      <ul>
+        <li>1999年创建 · 2006年正式获批 · 2020年晋级国家二级医院</li>
+        <li>建筑面积12000平方米 · 开放床位500张 · 汇聚数十名高级职称专家</li>
+        <li>特色方向：藏医为主、中西为辅，特色诊治各类慢性病与疑难杂症</li>
+        <li>地址：黑龙江省哈尔滨市香坊区通乡街4号</li>
+        <li>电话：0451-55125678</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hos-card fade">
+    <img src="../assets/cd-jinxin-building-day.jpg" alt="成都喜马拉雅藏医医院">
+    <div class="hbody">
+      <h3>成都喜马拉雅藏医医院</h3>
+      <div><span class="tag">国家二级医院</span><span class="tag">省市区异地医保定点</span><span class="tag">民族医药优秀传承单位</span><span class="tag">西藏医保定点</span></div>
+      <ul>
+        <li>2020年于成都成立 · 四川省内规模最大的二级民营民族综合医院</li>
+        <li>占地约10000平方米 · 床位近百张 · "藏、中、西"三医融合新模式</li>
+        <li>医保便捷：全面开通省、市、区、异地及西藏医保结算，实现全域医保互通</li>
+        <li>专科优势：藏药内服调理为核心，结合药浴外治与康复复健</li>
+        <li>地址：四川省成都市成华区光明滨河路60号</li>
+        <li>门诊时间：08:30-12:00 · 14:00-17:00</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 联系 ============ -->
+<footer id="contact">
+  <h3>四朗青佩 · 南派藏医传承人</h3>
+  <p>国家级非物质文化遗产 · 藏医药（甘孜州南派藏医药）代表性传承人</p>
+  <p class="tel">哈尔滨德格藏医医院：0451-55125678</p>
+  <p>地址：黑龙江省哈尔滨市香坊区通乡街4号</p>
+  <p>成都喜马拉雅藏医医院：成都市成华区光明滨河路60号</p>
+  <p style="margin-top:8px">预约就诊请提前电话确认 · 门诊时间以医院当日公告为准</p>
+  <div class="copy">
+    本页面为四朗青佩院长个人品牌形象页，所载内容整理自公开媒体报道及官方资料（中国日报网、中国西藏网、中国藏学研究中心、康巴卫视、新华网、抖音百科、搜狐、哈尔滨德格藏医医院官方资料、院长官方抖音账号等），版权归原媒体与发布者所有。
+    <br>© 2026 四朗青佩 · 南派藏医传承人品牌主页 | 本页面内容仅作文化传承与科普展示，不构成诊疗建议。
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){var d=document.getElementById('drawer'),b=document.getElementById('burger');d.classList.toggle('show');b.classList.toggle('open');}
+  function closeMenu(){document.getElementById('drawer').classList.remove('show');document.getElementById('burger').classList.remove('open');}
+  // 入场淡入
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.fade').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
