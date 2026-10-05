@@ -2213,6 +2213,8 @@ button{font-family:inherit;cursor:pointer}
     {t:'藏医半生',s:'半生行医，一生向善',f:'assets/music/song9.mp3'}
   ];
   var bgm=document.getElementById('bgm');
+  var nextAudio=new Audio();
+  nextAudio.preload='auto';
   var mBtn=document.getElementById('musicBtn');
   var mTip=document.getElementById('musicTip');
   var playBtn=document.getElementById('playBtn');
@@ -2243,9 +2245,7 @@ button{font-family:inherit;cursor:pointer}
     playerSub.textContent=tracks[i].s;
     renderPlaylist();
     // 预加载下一首，避免切歌卡顿
-    var next=new Audio();
-    next.preload='auto';
-    next.src=tracks[(i+1)%tracks.length].f;
+    nextAudio.src=tracks[(i+1)%tracks.length].f;
   }
   function setPlaying(on){
     playIcon.style.display=on?'none':'block';
