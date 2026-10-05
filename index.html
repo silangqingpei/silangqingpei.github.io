@@ -1123,7 +1123,7 @@ button{font-family:inherit;cursor:pointer}
         <figure class="book-photo rv"><img src="assets/books/新书发布会-签名现场1.jpg" alt="新书发布会签名现场，四朗青佩院长为读者签名"><figcaption>新书发布暨签售现场</figcaption></figure>
         <figure class="book-photo rv"><img src="assets/books/新书发布会-书籍展示2.jpg" alt="《跟着藏医学养生》书籍展示"><figcaption>新书整齐陈列</figcaption></figure>
         <figure class="book-photo rv"><img src="assets/books/新书发布会-赠书互动3.jpg" alt="四朗青佩院长与读者互动赠书"><figcaption>院长与读者交流</figcaption></figure>
-        <figure class="book-photo rv"><img src="assets/books/新书发布会-宣传海报4.jpg" alt="《跟着藏医学养生》宣传海报，四朗青佩院长"><figcaption>新书宣传海报</figcaption></figure>
+        <figure class="book-photo rv"><img src="assets/books/新书发布会-宣传海报4.jpg" alt="《跟着藏医学养生》宣传海报，四朗青佩院长" style="object-position:center top"><figcaption>新书宣传海报</figcaption></figure>
         <figure class="book-photo rv"><img src="assets/books/新书发布会-阅读活动5.jpg" alt="读者们阅读《跟着藏医学养生》"><figcaption>读者阅读分享</figcaption></figure>
         <figure class="book-photo rv"><img src="assets/books/新书发布会-赠书仪式6.jpg" alt="《跟着藏医学养生》新书发布及签名赠书仪式现场"><figcaption>签名赠书仪式现场</figcaption></figure>
         <figure class="book-photo rv"><img src="assets/books/新书发布会-敬献哈达7.jpg" alt="工作人员向四朗青佩院长敬献哈达"><figcaption>敬献哈达</figcaption></figure>
@@ -2216,6 +2216,10 @@ button{font-family:inherit;cursor:pointer}
     playerTitle.textContent=tracks[i].t;
     playerSub.textContent=tracks[i].s;
     renderPlaylist();
+    // 预加载下一首，避免切歌卡顿
+    var next=new Audio();
+    next.preload='auto';
+    next.src=tracks[(i+1)%tracks.length].f;
   }
   function setPlaying(on){
     playIcon.style.display=on?'none':'block';
