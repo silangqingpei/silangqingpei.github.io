@@ -296,8 +296,17 @@ button{font-family:inherit;cursor:pointer}
 .footer-links{display:flex;flex-wrap:wrap;gap:14px}
 .footer-links a{color:#C9B49C;transition:color .25s}
 .footer-links a:hover{color:var(--gold-l)}
-.footer-bottom{padding-top:26px;text-align:center;font-size:12.5px;color:#7C6753}
+.footer-bottom{padding-top:26px;text-align:center;font-size:12.5px;color:#A08B74}
 .footer-bottom b{color:var(--gold-l);font-weight:500}
+/* ---------- 备案信息条（ICP + 公安网安，合规展示） ---------- */
+.beian-bar{margin-top:18px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}
+.beian-link{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border:1px solid rgba(231,206,147,.36);border-radius:999px;background:rgba(231,206,147,.09);color:#EBD69F;font-size:13px;line-height:1.4;letter-spacing:.03em;text-decoration:none;transition:background .25s,border-color .25s,color .25s}
+.beian-link:hover{background:rgba(231,206,147,.2);border-color:rgba(231,206,147,.7);color:#FBF1D8}
+.beian-link svg{flex:none;opacity:.95}
+@media (max-width:560px){
+  .beian-bar{gap:8px}
+  .beian-link{padding:8px 13px;font-size:12.5px}
+}
 /* ---------- 音乐按钮 ---------- */
 .music-btn{position:fixed;right:22px;bottom:22px;z-index:120;width:54px;height:54px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--crimson-b),var(--crimson));color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(142,31,43,.45);transition:.3s}
 .music-btn:hover{transform:scale(1.08)}
@@ -935,19 +944,6 @@ button{font-family:inherit;cursor:pointer}
           <div class="mentor-teach-item rv" style="flex:2"><b>心系藏区 · 情牵教学</b><p>走出高原三十余年，青佩院长始终牵挂着藏区藏医药的教学与教育——多次深入藏区校园与教学一线，看望师生、交流传承心得，以实际行动反哺雪域故土。</p></div>
         </div>
       </div>
-    </div>
-    <div class="visit-head" style="margin-top:40px">
-      <h3>情系雪域 · 关心藏医药教育</h3>
-      <p>从雪域高原到内地课堂，四朗青佩院长始终心系藏医药的传承教学，走进藏区校园与课堂，关心青年一代的藏医学习与成长。</p>
-    </div>
-    <div class="visit-grid">
-      <figure class="rv"><img src="assets/edu/e-01.jpg" alt="四朗青佩院长关心藏区藏医教学"><figcaption>走进藏区校园 · 关心藏医教学</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-02.jpg" alt="四朗青佩院长与藏医药学子交流"><figcaption>与青年学子交流藏医心得</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-03.jpg" alt="藏医药课堂现场"><figcaption>藏医药课堂 · 薪火相传</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-04.jpg" alt="四朗青佩院长关心藏医药教育事业"><figcaption>心系藏医药教育事业</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-05.jpg" alt="藏区学校师生与四朗青佩院长"><figcaption>校园前的相聚 · 传承的种子</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-06.jpg" alt="四朗青佩院长关心藏医人才培养"><figcaption>关注藏医人才培养</figcaption></figure>
-      <figure class="rv"><img src="assets/edu/e-07.jpg" alt="藏医药教学传承现场"><figcaption>教学传承 · 后继有人</figcaption></figure>
     </div>
   </div>
 </section>
@@ -2157,6 +2153,13 @@ button{font-family:inherit;cursor:pointer}
     </div>
     <div class="footer-bottom">
       <p>© 2026 <b>四朗青佩</b> · 南派藏医传承人品牌主页　|　图片素材版权归原媒体与发布者所有，视频版权归原发布者所有　|　地址电话等信息据公开资料整理，就诊前请电话确认</p>
+      <div class="beian-bar">
+        <a class="beian-link" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener" title="工业和信息化部政务服务平台 · ICP备案查询">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8l7.2 3v6.1c0 4.3-3 7.9-7.2 9.3-4.2-1.4-7.2-5-7.2-9.3V5.8l7.2-3z"/><path d="M9.1 12.1l2.1 2.1 3.8-4.3"/></svg>
+          <span>黑ICP备2026012529号</span>
+        </a>
+        <!-- 公安联网备案通过后，在此追加一条同结构链接 -->
+      </div>
     </div>
   </div>
 </footer>
