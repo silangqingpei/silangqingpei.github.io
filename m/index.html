@@ -176,14 +176,14 @@ button{font-family:inherit;cursor:pointer}
 .stat span{font-size:13px;color:#C9B49C;letter-spacing:.14em;display:block;margin-top:8px}
 /* ---------- 视频中心 ---------- */
 .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.vcard{background:#2B1B17;border:1px solid rgba(231,206,147,.16);border-radius:14px;overflow:hidden;transition:.35s;position:relative;display:block}
-.vcard:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.4);border-color:rgba(231,206,147,.45)}
+.vcard{cursor:default;background:#2B1B17;border:1px solid rgba(231,206,147,.16);border-radius:14px;overflow:hidden;transition:.35s;position:relative;display:block}
+.vcard:hover{border-color:rgba(231,206,147,.4)}
 .vthumb{position:relative;aspect-ratio:3/4;overflow:hidden;background:#1A110F}
 .vthumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .vcard:hover .vthumb img{transform:scale(1.07)}
 .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(20,12,10,.28);opacity:0;transition:.35s}
 .vplay svg{width:54px;height:54px;filter:drop-shadow(0 4px 14px rgba(0,0,0,.5))}
-.vcard:hover .vplay{opacity:1}
+.vcard:hover .vplay{opacity:.55}
 .vtag{position:absolute;left:10px;top:10px;background:rgba(20,12,10,.72);color:var(--gold-l);font-size:11px;letter-spacing:.1em;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
 .vinfo{padding:14px 15px 16px}
 .vinfo h3{font-family:var(--serif);font-size:15.5px;color:#F4EBDD;line-height:1.45;margin-bottom:7px;font-weight:600}
@@ -245,9 +245,9 @@ button{font-family:inherit;cursor:pointer}
 .charity-list li b{color:#fff;font-weight:600}
 /* ---------- 媒体报道 ---------- */
 .media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.mcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;transition:.3s;position:relative;overflow:hidden}
+.mcard{cursor:default;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;flex-direction:column;gap:8px;transition:.3s;position:relative;overflow:hidden}
 .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),var(--crimson));opacity:0;transition:.3s}
-.mcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.mcard:hover{box-shadow:var(--shadow)}
 .mcard:hover::before{opacity:1}
 .mcard .m-src{font-size:12px;letter-spacing:.14em;color:var(--gold-d);font-weight:500}
 .mcard h3{font-family:var(--serif);font-size:16.5px;line-height:1.5;color:var(--text)}
@@ -647,7 +647,7 @@ button{font-family:inherit;cursor:pointer}
       <p class="sec-sub">从雪域高原到北国冰城，从诊室问诊到古籍研读——透过镜头，走近这位南派藏医传承人的行医日常与文化坚守。</p>
     </div>
     <div class="video-grid">
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7579197492743408937" target="_blank" rel="noopener">
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-outreach.jpg" alt="视频封面：让藏医药文化走出高原" loading="lazy">
           <span class="vtag">院长说</span>
@@ -658,8 +658,8 @@ button{font-family:inherit;cursor:pointer}
           <p>四朗青佩：从甘孜藏医世家到内地城市，让藏药浴、放血技艺在平原落地生根。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2025-12 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7576669710478522745" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-story.jpg" alt="视频封面：著名藏医专家四朗青佩的故事" loading="lazy">
           <span class="vtag">深度讲述</span>
@@ -670,8 +670,8 @@ button{font-family:inherit;cursor:pointer}
           <p>播客深度讲述：藏医世家传承与学医经历，扎根哈尔滨三十余载的民族团结故事。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2025-11 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7496124053310098728" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-morning.jpg" alt="视频封面：清晨的藏医医院" loading="lazy">
           <span class="vtag">出诊实录</span>
@@ -682,8 +682,8 @@ button{font-family:inherit;cursor:pointer}
           <p>天南海北的患者排成长队，有人带着X光片，有人揣着辗转多地的病历……</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2025-04 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7646025333599661819" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-day.jpg" alt="视频封面：平凡的一天" loading="lazy">
           <span class="vtag">医者日常</span>
@@ -694,8 +694,8 @@ button{font-family:inherit;cursor:pointer}
           <p>一天看诊八十多位患者，下午又到博物馆研究藏医古方——可敬的藏医人。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2026-05 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7606269975690595626" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-newyear.jpg" alt="视频封面：四朗青佩院长拜年" loading="lazy">
           <span class="vtag">新春祝福</span>
@@ -706,8 +706,8 @@ button{font-family:inherit;cursor:pointer}
           <p>四朗青佩院长以藏医药文化传承者的身份，送上最诚挚的新春祝福。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2026-02 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7341437469381971209" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-sanzhicairang.jpg" alt="视频封面：为三智才让看诊" loading="lazy">
           <span class="vtag">诊脉实录</span>
@@ -718,8 +718,8 @@ button{font-family:inherit;cursor:pointer}
           <p>被患者称作“人体CT机”的四朗青佩院长，为知名歌手三智才让全面检查与诊断。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2024-03 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7325082708672023846" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-chengdu.jpg" alt="视频封面：蓉城篇·藏医药发展" loading="lazy">
           <span class="vtag">医院纪实</span>
@@ -730,8 +730,8 @@ button{font-family:inherit;cursor:pointer}
           <p>专家到访成都喜马拉雅藏医医院，青佩院长介绍医院发展与藏医药特色。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2024-01 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://www.iesdouyin.com/share/video/7661954000846465905" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v-singer.jpg" alt="视频封面：跨越千里的相逢" loading="lazy">
           <span class="vtag">文化交流</span>
@@ -742,8 +742,8 @@ button{font-family:inherit;cursor:pointer}
           <p>国际歌唱家走进冰城藏医馆，参观藏药材与文物博物馆，赞叹国家扶持民族文化。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2026-07 · 官方抖音</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://v.qq.com/x/page/t3517tyrhts.html" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v9-kangba-xiangba.jpg" alt="视频封面：向巴老师与四朗青佩（右）" loading="lazy">
           <span class="vtag">康巴卫视</span>
@@ -754,8 +754,8 @@ button{font-family:inherit;cursor:pointer}
           <p>康巴卫视《向巴聊天》2023年6月9日播出，四朗青佩院长与主持人向巴老师畅谈藏医创业人生，25分钟高清完整版。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2023-06 · 康巴卫视 / 腾讯视频</div>
         </div>
-      </a>
-      <a class="vcard rv" href="https://v.qq.com/x/page/u3516a05sd6.html" target="_blank" rel="noopener">
+      </div>
+      <div class="vcard rv">
         <div class="vthumb">
           <img src="assets/covers/v10-gshk.jpg" alt="视频封面：康巴卫视《向巴聊天》全球首播" loading="lazy">
           <span class="vtag">康巴卫视</span>
@@ -766,7 +766,7 @@ button{font-family:inherit;cursor:pointer}
           <p>2023年6月康巴卫视全球首播：老藏医忠登郎加与四朗青佩院长在《向巴聊天》畅谈藏医药文化、解析民族医药经典，共话世界非遗藏药浴。</p>
           <div class="vmeta"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 10h4v2h-6V7h2z"/></svg>2023-06 · 康巴卫视 / 腾讯视频</div>
         </div>
-      </a>
+      </div>
     </div>
     <p class="video-note">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
@@ -1547,10 +1547,10 @@ button{font-family:inherit;cursor:pointer}
       <div style="margin-top:22px">
         <div style="font-size:13px;letter-spacing:.08em;color:#C9B49C;margin-bottom:12px">相关公开报道：</div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px">
-          <a href="http://news.cnr.cn/native/gd/20200227/t20200227_524994423.shtml" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>央广网 · 黑龙江藏医捐赠价值近百万元防控疫情物资</span><span style="color:var(--gold,#E7CE93);white-space:nowrap">阅读原文 →</span></a>
-          <a href="https://h5.cinn.cn/davmu/share/holly/doc/2018/05/VDWVx2Gr/index.html" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>中国工业新闻网 · 悬壶济世 有钱人看病没钱人也看病</span><span style="color:var(--gold,#E7CE93);white-space:nowrap">阅读原文 →</span></a>
-          <a href="http://www.tibet.cn/cn/medicine/news/202003/t20200318_6755186.html" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>中国西藏网 · 四朗青佩：以本民族医药救治病患，是我最幸福的事</span><span style="color:var(--gold,#E7CE93);white-space:nowrap">阅读原文 →</span></a>
-          <a href="https://m.baike.com/wiki/%E5%9B%9B%E6%9C%97%E9%9D%92%E4%BD%A9/7072238510836667651" target="_blank" rel="noopener" style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>抖音百科 · 四朗青佩：每年藏区义诊100场、公益善款500余万</span><span style="color:var(--gold,#E7CE93);white-space:nowrap">阅读原文 →</span></a>
+          <div style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>央广网 · 黑龙江藏医捐赠价值近百万元防控疫情物资</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>中国工业新闻网 · 悬壶济世 有钱人看病没钱人也看病</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>中国西藏网 · 四朗青佩：以本民族医药救治病患，是我最幸福的事</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border:1px solid rgba(231,206,147,.14);border-radius:10px;padding:12px 14px;color:#D8C7AD;text-decoration:none;font-size:13px;transition:border-color .3s"><span>抖音百科 · 四朗青佩：每年藏区义诊100场、公益善款500余万</span></div>
         </div>
       </div>
     </div>
@@ -1852,83 +1852,72 @@ button{font-family:inherit;cursor:pointer}
       <p class="sec-sub">中国日报网、中国西藏网、中国藏学研究中心、康巴卫视等权威媒体，多次报道四朗青佩院长的行医故事与文化坚守。</p>
     </div>
     <div class="media-grid">
-      <a class="mcard rv" href="http://cn.chinadaily.com.cn/a/202002/27/WS5e577edda3107bb6b57a2c92.html" target="_blank" rel="noopener">
+      <div class="mcard rv">
         <span class="m-src">中国日报网 · 时政要闻</span>
         <h3>黑龙江藏医捐赠价值近百万元防控疫情物资</h3>
         <p>“他，仿佛是为扶危济困而生。”——国难当头，他一边满世界找口罩，一边整理藏药经典配方。</p>
         <span class="m-date">2020-02-27</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="http://www.tibet.cn/cn/medicine/news/202003/t20200318_6755186.html" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">中国西藏网 · 藏医药</span>
         <h3>四朗青佩：以本民族医药救治病患，是我最幸福的事</h3>
         <p>从祖传医书到抗疫组方，从北国冰城到甘孜疫区——一位藏医的赤子之心。</p>
         <span class="m-date">2020-03-18</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="http://www.tibetology.ac.cn/2021-10/26/content_41730431.htm" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">中国藏学研究中心</span>
         <h3>藏药浴探索“康养+文旅”产业模式</h3>
         <p>哈尔滨德格藏医医院院长四朗青佩：藏药浴在内地的临床应用非常广泛，覆盖多个系统疾病。</p>
         <span class="m-date">2021-10-26</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://www.zdwx.com/news/show_3184743.html" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">康巴卫视 · 向巴聊天栏目</span>
         <h3>藏医专家四朗青佩在“向巴聊天”中解析民族医药经典</h3>
         <p>主持人向巴老师实地采访，畅聊世界非遗藏药浴、亚健康问题与藏医药在内地的传承弘扬。</p>
         <span class="m-date">2023-06</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://m.sohu.com/a/667477592_121380690/" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">搜狐 · 哈尔滨德格曼孜康</span>
         <h3>四月，青佩院长回哈出诊</h3>
         <p>患者听说院长回哈尔滨出诊，每天早早来到医院门口排队；院长日诊数十人为各族患者解除病痛。</p>
         <span class="m-date">2023-04-17</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://sctcm.sc.gov.cn/sctcm/sqzl/2023/9/6/2e9e11f31c634cc5b4021a3ef4f48075/files/%E5%B7%9D%E4%B8%AD%E5%8C%BB%E5%B9%BF%E3%80%902023%E3%80%91%E7%AC%AC09-18-303%E5%8F%B7%E6%88%90%E9%83%BD%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E8%97%8F%E5%8C%BB%E5%8C%BB%E9%99%A2.pdf" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">四川省中医药管理局</span>
         <h3>成都喜马拉雅藏医医院 · 医疗机构执业许可公示</h3>
         <p>四川省中医药管理局医疗广告审查证明公开文件，法定代表人（主要负责人）：四朗青佩。</p>
         <span class="m-date">2023-09 / 2025-10</span>
-        <span class="m-go">查看文件 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="http://news.cnr.cn/native/gd/20200227/t20200227_524994423.shtml" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">央广网 · 时政</span>
         <h3>黑龙江藏医捐赠价值近百万元防控疫情物资</h3>
         <p>他衣着简朴、生活节俭，一套藏袍可出席多届国内外学术会；却为疫区持续捐赠防控物资近百万元——他就是四朗青佩。</p>
         <span class="m-date">2020-02-27</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="http://www.xinhuanet.com/politics/2022-01/18/c_1128275877.htm" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">新华网 · 权威报道</span>
         <h3>跨越喜马拉雅的战“疫”——藏医药抗疫与铸牢中华民族共同体意识</h3>
         <p>四朗青佩研制的藏药组方被运用于治疗新冠肺炎患者：甘孜州78名确诊病例中76名使用藏药，参与率达97%。</p>
         <span class="m-date">2022-01-18</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://h5.cinn.cn/davmu/share/holly/doc/2018/05/VDWVx2Gr/index.html" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">中国工业新闻网 · 人物报道</span>
         <h3>悬壶济世 · 同胞之情血浓于水</h3>
         <p>“弘扬雪域医术，惠泽龙江百姓”——以著名藏医学家四朗青佩为创始人的哈尔滨德格藏医医院，以病人为中心、以疗效为核心。</p>
         <span class="m-date">2018-05-24</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://www.zdushi.com/news/show_2071681.html" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">都市头条 · 患者见闻</span>
         <h3>医者仁心——哈尔滨德格藏医医院见闻</h3>
         <p>“被多家中西医院判定只能开刀，抱着试试看的心态来到藏医医院，十几天后沉疴渐愈、五内熨帖”——一位风寒骨病患者的实录。</p>
         <span class="m-date">2021-06-19</span>
-        <span class="m-go">阅读原文 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
-      <a class="mcard rv" href="https://m.baike.com/wiki/%E5%9B%9B%E6%9C%97%E9%9D%92%E4%BD%A9/7072238510836667651" target="_blank" rel="noopener">
+        </div>
+      <div class="mcard rv">
         <span class="m-src">抖音百科 · 词条</span>
         <h3>四朗青佩[哈尔滨德格藏医医院创始人、院长]</h3>
         <p>百科词条收录其完整履历：从藏医世家到哈佛讲坛，从百万人次接诊到抗疫驰援，三十余载行医之路全景呈现。</p>
         <span class="m-date">词条更新</span>
-        <span class="m-go">查看词条 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </a>
+        </div>
     </div>
     <div class="wx-head">
       <h3>公众号报道墙 · 十余年记录</h3>
